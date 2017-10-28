@@ -1,0 +1,18 @@
+{
+  "name": "matrice",
+  "version": "1.0.0",
+  "description": "bac a sable pour operations sur matrices",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape tests/*"
+  },
+  "keywords": [
+    "matrice",
+    "js"
+  ],
+  "author": "lmokrane",
+  "license": "ISC",
+  "devDependencies": {
+    "tape": "^4.8.0"
+  }
+}
