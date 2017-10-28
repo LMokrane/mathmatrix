@@ -17,16 +17,36 @@ class Matrice {
     return C;
   }
 
+  dotMultiplication(A, B) {
+    let n= A.length, m= A[0].length;
+    if (n !== B.length && m !== B[0].length) {
+      throw new Error('Dimensions des matrices non correspondantes');
+    } else {
+      let C = [];
+      for (let i=0; i<n; i++) {
+        C[i] = [];
+        for (let j=0; j<m; j++) {
+          C[i].push(A[i][j] * B[i][j]);
+        }
+      }
+      return C;
+    }
+  }
+
   addition(A, B) {
     let n= A.length, m= A[0].length;
-    let C = [];
-    for (let i=0; i<n; i++) {
-      C[i] = [];
-      for (let j=0; j<m; j++) {
-        C[i].push(A[i][j] + B[i][j]);
+    if (n !== B.length && m !== B[0].length) {
+      throw new Error('Dimensions des matrices non correspondantes');
+    } else {
+      let C = [];
+      for (let i=0; i<n; i++) {
+        C[i] = [];
+        for (let j=0; j<m; j++) {
+          C[i].push(A[i][j] + B[i][j]);
+        }
       }
+      return C;
     }
-    return C;
   }
 }
 
