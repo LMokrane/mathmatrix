@@ -24,3 +24,27 @@ test('multiplication', t => {
     t.fail(err);
   }
 });
+
+test('addition', t => {
+  t.plan(3);
+
+  try {
+    let ops = new lib();
+    let m1 = [[1,2], [3,4]];
+    let m2 = [[5,6], [7,8]];
+    let res = ops.addition(m1, m2);
+    t.deepEqual(res, [[6,8],[10,12]], '2x2 + 2x2');
+
+    m1 = [[1,2,3], [2,3,1],[3,1,2]];
+    m2 = [[1,2,3], [2,3,1],[3,1,2]];
+    res = ops.addition(m1, m2);
+    t.deepEqual(res, [[2,4,6],[4,6,2],[6,2,4]], '3x3 + 3x3');
+
+    m1 = [[1,4], [2,3], [3,2], [4,1]];
+    m2 = [[1,2,3,4], [4,3,2,1]];
+    res = ops.addition(m1, m2);
+    t.notOk(res, '4x2 + 2x4');
+  } catch(err) {
+    t.fail(err);
+  }
+});
