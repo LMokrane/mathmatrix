@@ -159,6 +159,16 @@ class Matrice {
       return C;
     }
   }
+
+  uns(A) {
+    let n= A.length, m= A[0].length;
+    let C = [];
+    let un= [1];
+    for (let i=0; i<n; i++) {
+      C.push(un.concat(A[i]));
+    }
+    return C;
+  }
 }
 
 module.exports = Matrice;

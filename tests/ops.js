@@ -135,7 +135,6 @@ test('additionScalaire', t => {
   t.plan(2);
 
   let ops = new lib();
-
   let m1 = 2;
   let m2 = [[1,2,3], [2,3,1],[3,1,2]];
   let res = ops.additionScalaire(m1, m2);
@@ -164,4 +163,13 @@ test('soustraction', t => {
   m1 = [[1,4], [2,3], [3,2], [4,1]];
   m2 = [[1,2,3,4], [4,3,2,1]];
   t.throws(() => ops.soustraction(m1, m2), new Error,'Error: Dimensions des matrices non correspondantes');
+});
+
+test('uns', t => {
+  t.plan(1);
+
+  let ops = new lib();
+  let m2 = [[5,6], [7,8]];
+  let res = ops.uns(m2);
+  t.deepEqual(res, [[1,5,6],[1,7,8]], '2x2');
 });
