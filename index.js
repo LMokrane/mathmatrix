@@ -94,6 +94,16 @@ class Matrice {
     return C;
   }
 
+  moyenne(A) {
+    A = this.somme(A);
+    let m= A[0].length;
+    let C= [[]];
+    for (let j=0; j<m; j++) {
+      C[0][j] = this._virgule(A[0][j] / m);
+    }
+    return C;
+  }
+
   addition(A, B) {
     let n= A.length, m= A[0].length;
     if (n !== B.length && m !== B[0].length) {

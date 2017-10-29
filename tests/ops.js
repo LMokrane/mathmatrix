@@ -100,6 +100,18 @@ test('logarithme', t => {
   t.deepEqual(res, [[0,0.69314,1.09861], [0.69314,1.09861,0], [1.09861,0,0.69314]], '3x3');
 });
 
+test('moyenne', t => {
+  t.plan(2);
+  let ops = new lib({precision:2});
+  let m1 = [[1,2], [3,0.0000004]];
+  let res = ops.moyenne(m1);
+  t.deepEqual(res, [[2,1]], '2x2');
+
+  m1 = [[1,2,3], [2,3,1], [3,1,2]];
+  res = ops.moyenne(m1);
+  t.deepEqual(res, [[2, 2, 2]], '3x3');
+});
+
 test('addition', t => {
   t.plan(3);
 
