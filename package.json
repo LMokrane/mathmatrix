@@ -4,7 +4,7 @@
   "description": "bac a sable pour operations sur matrices",
   "main": "index.js",
   "scripts": {
-    "test": "tape tests/*"
+    "test": "tape tests/**/*.js | tap-spec"
   },
   "keywords": [
     "matrice",
@@ -13,6 +13,7 @@
   "author": "lmokrane",
   "license": "ISC",
   "devDependencies": {
+    "tap-spec": "^4.1.1",
     "tape": "^4.8.0"
   }
 }
