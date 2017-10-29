@@ -1,7 +1,7 @@
 {
-  "name": "matrice",
+  "name": "mathmatrix",
   "version": "1.0.0",
-  "description": "bac a sable pour operations sur matrices",
+  "description": "boite a outils pour matrices",
   "main": "index.js",
   "scripts": {
     "test": "tape tests/**/*.js | tap-spec"
