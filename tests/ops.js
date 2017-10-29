@@ -76,6 +76,18 @@ test('dotPuissance', t => {
   t.deepEqual(res, [[1,8,27],[8,27,1],[27,1,8]], '3x3³');
 });
 
+test('somme', t => {
+  t.plan(2);
+  let ops = new lib();
+  let m1 = [[1,2], [3,0.0000004]];
+  let res = ops.somme(m1);
+  t.deepEqual(res, [[4,2.0000004]], '2x2');
+
+  m1 = [[1,2,3], [2,3,1],[3,1,2]];
+  res = ops.somme(m1);
+  t.deepEqual(res, [[6,6,6]], '3x3');
+});
+
 test('addition', t => {
   t.plan(3);
 

@@ -71,6 +71,17 @@ class Matrice {
     return C;
   }
 
+  somme(A) {
+    let n= A.length, m= A[0].length;
+    let C= [[]];
+    for (let i=0; i<n; i++) {
+      for (let j=0; j<m; j++) {
+        C[0][j] ? C[0][j] += this._virgule(A[i][j]) : C[0].push(A[i][j]);
+      }
+    }
+    return C;
+  }
+
   addition(A, B) {
     let n= A.length, m= A[0].length;
     if (n !== B.length && m !== B[0].length) {
