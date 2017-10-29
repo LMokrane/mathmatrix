@@ -1,7 +1,7 @@
 class Matrice {
   constructor(options) {
     let conf = options || {
-      precision : 5
+      precision : null
     };
     this.precision = conf.precision;
   }

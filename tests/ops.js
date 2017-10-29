@@ -90,7 +90,7 @@ test('somme', t => {
 
 test('logarithme', t => {
   t.plan(2);
-  let ops = new lib();
+  let ops = new lib({precision:5});
   let m1 = [[1,2], [3,0.0000004]];
   let res = ops.logarithme(m1);
   t.deepEqual(res, [[0,0.69314],[1.09861, -14.73180]], '2x2');
