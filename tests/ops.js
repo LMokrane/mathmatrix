@@ -83,9 +83,21 @@ test('somme', t => {
   let res = ops.somme(m1);
   t.deepEqual(res, [[4,2.0000004]], '2x2');
 
-  m1 = [[1,2,3], [2,3,1],[3,1,2]];
+  m1 = [[1,2,3], [2,3,1], [3,1,2]];
   res = ops.somme(m1);
   t.deepEqual(res, [[6,6,6]], '3x3');
+});
+
+test('logarithme', t => {
+  t.plan(2);
+  let ops = new lib();
+  let m1 = [[1,2], [3,0.0000004]];
+  let res = ops.logarithme(m1);
+  t.deepEqual(res, [[0,0.69314],[1.09861, -14.73180]], '2x2');
+
+  m1 = [[1,2,3], [2,3,1], [3,1,2]];
+  res = ops.logarithme(m1);
+  t.deepEqual(res, [[0,0.69314,1.09861], [0.69314,1.09861,0], [1.09861,0,0.69314]], '3x3');
 });
 
 test('addition', t => {

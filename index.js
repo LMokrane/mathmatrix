@@ -7,7 +7,7 @@ class Matrice {
   }
 
   _virgule(val) {
-    let regx = new RegExp(`[0-9]*\.[0-9]{${this.precision}}`,'g');
+    let regx = new RegExp(`[\-0-9]*\.[0-9]{${this.precision}}`,'g');
     let res = regx.exec(val);
     return res ? parseFloat(res[0]) : val;
   }
@@ -66,6 +66,18 @@ class Matrice {
       C[i] = [];
       for (let j=0; j<m; j++) {
         C[i].push( this._virgule(Math.pow(A[i][j], p) ));
+      }
+    }
+    return C;
+  }
+
+  logarithme(A) {
+    let n= A.length, m= A[0].length;
+    let C = [];
+    for (let i=0; i<n; i++) {
+      C[i] = [];
+      for (let j=0; j<m; j++) {
+        C[i].push( this._virgule(Math.log(A[i][j]) ));
       }
     }
     return C;
