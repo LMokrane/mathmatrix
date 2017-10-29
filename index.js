@@ -98,6 +98,30 @@ class Matrice {
     }
   }
 
+  additionScalaire(A, B) {
+    let n=0, m=0, C=[];
+    if (Array.isArray(A)) {
+      n=A.length;
+      m=A[0].length;
+      for (let i=0; i<n; i++) {
+        C[i] = [];
+        for (let j=0; j<m; j++) {
+          C[i].push( this._virgule(A[i][j] + B) );
+        }
+      }
+    } else {
+      n=B.length;
+      m=B[0].length;
+      for (let i=0; i<n; i++) {
+        C[i] = [];
+        for (let j=0; j<m; j++) {
+          C[i].push( this._virgule(B[i][j] + A) );
+        }
+      }
+    }
+    return C;
+  }
+
   soustraction(A, B) {
     let n= A.length, m= A[0].length;
     if (n !== B.length && m !== B[0].length) {
