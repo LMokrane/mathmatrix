@@ -48,6 +48,22 @@ class Matrice {
       return C;
     }
   }
+
+  soustraction(A, B) {
+    let n= A.length, m= A[0].length;
+    if (n !== B.length && m !== B[0].length) {
+      throw new Error('Dimensions des matrices non correspondantes');
+    } else {
+      let C = [];
+      for (let i=0; i<n; i++) {
+        C[i] = [];
+        for (let j=0; j<m; j++) {
+          C[i].push(A[i][j] - B[i][j]);
+        }
+      }
+      return C;
+    }
+  }
 }
 
 module.exports = Matrice;
