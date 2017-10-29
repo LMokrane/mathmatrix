@@ -59,6 +59,18 @@ class Matrice {
     }
   }
 
+  dotPuissance(A, p) {
+    let n= A.length, m= A[0].length;
+    let C = [];
+    for (let i=0; i<n; i++) {
+      C[i] = [];
+      for (let j=0; j<m; j++) {
+        C[i].push( this._virgule(Math.pow(A[i][j], p) ));
+      }
+    }
+    return C;
+  }
+
   addition(A, B) {
     let n= A.length, m= A[0].length;
     if (n !== B.length && m !== B[0].length) {

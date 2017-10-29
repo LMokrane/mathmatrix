@@ -61,6 +61,21 @@ test('dotDivision', t => {
   t.throws(() => ops.dotDivision(m1, m2), new Error,'Error: Dimensions des matrices non correspondantes');
 });
 
+test('dotPuissance', t => {
+  t.plan(2);
+  let options = {
+    precision: 3
+  };
+  let ops = new lib(options);
+  let m1 = [[1,2], [3,0.04]];
+  let res = ops.dotPuissance(m1, 2);
+  t.deepEqual(res, [[1,4], [9,0.001]], '2x2²');
+
+  m1 = [[1,2,3], [2,3,1],[3,1,2]];
+  res = ops.dotPuissance(m1, 3);
+  t.deepEqual(res, [[1,8,27],[8,27,1],[27,1,8]], '3x3³');
+});
+
 test('addition', t => {
   t.plan(3);
 
