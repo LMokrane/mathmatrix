@@ -40,6 +40,27 @@ test('dotMultiplication', t => {
   t.throws(() => ops.dotMultiplication(m1, m2), new Error,'Error: Dimensions des matrices non correspondantes');
 });
 
+test('dotDivision', t => {
+  t.plan(3);
+  let options = {
+    precision: 4
+  };
+  let ops = new lib(options);
+  let m1 = [[1,2], [3,4]];
+  let m2 = [[5,6], [7,8]];
+  let res = ops.dotDivision(m1, m2);
+  t.deepEqual(res, [[0.2,0.3333], [0.4285,0.5]], '2x2 ./ 2x2');
+
+  m1 = [[1,2,3], [2,3,1],[3,1,2]];
+  m2 = [[1,2,3], [2,3,1],[3,1,2]];
+  res = ops.dotDivision(m1, m2);
+  t.deepEqual(res, [[1,1,1],[1,1,1],[1,1,1]], '3x3 ./ 3x3');
+
+  m1 = [[1,4], [2,3], [3,2], [4,1]];
+  m2 = [[1,2,3,4], [4,3,2,1]];
+  t.throws(() => ops.dotDivision(m1, m2), new Error,'Error: Dimensions des matrices non correspondantes');
+});
+
 test('addition', t => {
   t.plan(3);
 
