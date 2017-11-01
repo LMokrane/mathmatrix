@@ -165,6 +165,21 @@ test('soustraction', t => {
   t.throws(() => ops.soustraction(m1, m2), new Error,'Error: Dimensions des matrices non correspondantes');
 });
 
+test('soustractionScalaire', t => {
+  t.plan(2);
+
+  let ops = new lib();
+  let m1 = 2;
+  let m2 = [[1,2,3], [2,3,1],[3,1,2]];
+  let res = ops.soustractionScalaire(m1, m2);
+  t.deepEqual(res, [[1,0,-1],[0,-1,1],[-1,1,0]], '2 - 3x3');
+
+  m1 = [[1,2,3], [2,3,1],[3,1,2]];
+  m2 = 3;
+  res = ops.soustractionScalaire(m1, m2);
+  t.deepEqual(res, [[-2,-1,0],[-1,0,-2],[0,-2,-1]], '3x3 - 3');
+});
+
 test('uns', t => {
   t.plan(1);
 
