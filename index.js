@@ -137,7 +137,7 @@ class Matrice {
       for (let i=0; i<n; i++) {
         C[i] = [];
         for (let j=0; j<m; j++) {
-          C[i].push( this._virgule(B[i][j] + A) );
+          C[i].push( A + this._virgule(B[i][j]) );
         }
       }
     }
