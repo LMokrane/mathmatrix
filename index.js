@@ -83,6 +83,18 @@ class Matrice {
     return C;
   }
 
+  exposant(A) {
+    let n= A.length, m= A[0].length;
+    let C = [];
+    for (let i=0; i<n; i++) {
+      C[i] = [];
+      for (let j=0; j<m; j++) {
+        C[i].push( this._virgule(Math.exp(A[i][j]) ));
+      }
+    }
+    return C;
+  }
+
   somme(A) {
     let n= A.length, m= A[0].length;
     let C= [[]];
